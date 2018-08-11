@@ -1,6 +1,6 @@
 #!/bin/sh
 
-GOGS_HOST="${GOGS_HTTP_DOMAIN}:${GOGS_HOST_PORT}"
+GOGS_HOST="${GOGS_HOST}"
 
 curl --insecure -i -X POST \
  --url "https://${GOGS_HOST}/install" \
@@ -25,7 +25,7 @@ curl --insecure -i -X POST \
  --data "domain=${GOGS_HTTP_DOMAIN}" \
  --data "ssh_port=${GOGS_SSH_PORT}" \
  --data "http_port=3000" \
- --data "app_url=https://${HOST}" \
+ --data "app_url=https://${GOGS_HOST}" \
  --data "log_root_path=/app/gogs/log" \
  --data "use_builtin_ssh_server=${GOGS_BUILTIN_SSH_SERVER}" \
  --data "smtp_host=${GOGS_SMTP_HOST}" \

@@ -1,12 +1,12 @@
 APP_NAME = Gogs
-RUN_USER = git
+RUN_USER = one
 RUN_MODE = prod
 
 [server]
 PROTOCOL         = https
-DOMAIN           = localhost
+DOMAIN           = mydomain.com
 HTTP_PORT        = 3000
-ROOT_URL         = https://localhost:10080/
+ROOT_URL         = https://gogs.mydomain.com/
 DISABLE_SSH      = false
 SSH_PORT         = 10022
 START_SSH_SERVER = false
