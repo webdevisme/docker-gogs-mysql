@@ -16,7 +16,7 @@ Checkout the bottom of this readme for an example nginx config.
 
 2. You could customize your settings before installation :
 
-    Edit `.env` file
+    Edit `.env` file and `etc/app.ini.dist`
 
 3. Install :
 
