@@ -53,7 +53,7 @@ Checkout the bottom of this readme for an example nginx config.
 
 3. Open your favorite browser :
 
-    - [https://localhost:10080/](https://localhost:10080)
+    - [https://mydomain.com/](https://mydomain.com)
 
 ---
 
