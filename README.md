@@ -83,7 +83,7 @@ git config --global --unset http.sslVerify
 
 ### Example Nginx Config
 
-[https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04] (This is using SSL setup using certbot)
+[This is using SSL setup using certbot](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04)
 
 ```
 server {
