@@ -2,7 +2,7 @@
 
 ## [Gogs](https://gogs.io/) is a painless self-hosted Git service
 
-## NOTE/Disclaimer: This is a fork of the awesome repo (that made things much easier for me!) however, I found that as I'd setup nginx on my server with subdomain redirect (gogs.mydomain.com) that the install scripts on this repo didn't quite set things up correctly for me, as it was designed to work with a domain:port address.
+*NOTE/Disclaimer:* This is a fork of the awesome repo (that made things much easier for me!) however, I found that as I'd setup nginx on my server with subdomain redirect (gogs.mydomain.com) that the install scripts on this repo didn't quite set things up correctly for me, as it was designed to work with a domain:port address.
 
 Checkout the bottom of this readme for an example nginx config.
 
@@ -83,7 +83,7 @@ git config --global --unset http.sslVerify
 
 ### Example Nginx Config
 
-[https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04](This is using SSL setup using certbot)
+[https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04] (This is using SSL setup using certbot)
 
 ```
 server {
