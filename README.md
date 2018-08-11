@@ -2,6 +2,10 @@
 
 ## [Gogs](https://gogs.io/) is a painless self-hosted Git service
 
+## NOTE/Disclaimer: This is a fork of the awesome repo (that made things much easier for me!) however, I found that as I'd setup nginx on my server with subdomain redirect (gogs.mydomain.com) that the install scripts on this repo didn't quite set things up correctly for me, as it was designed to work with a domain:port address.
+
+Checkout the bottom of this readme for an example nginx config.
+
 ### Getting started
 
 1. Clone project :
@@ -73,6 +77,37 @@ git config --global http.sslVerify false
 
 ```sh
 git config --global --unset http.sslVerify
+```
+
+---
+
+### Example Nginx Config
+
+[https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04](This is using SSL setup using certbot)
+
+```
+server {
+    listen 443 ssl;
+    server_name gogs.mydomain.com;
+    location / {
+            proxy_pass https://mydomain.com:10080;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_connect_timeout 150;
+            proxy_send_timeout 100;
+            proxy_read_timeout 100;
+            proxy_buffers 4 32k;
+            client_max_body_size 8m;
+            client_body_buffer_size 128k;
+
+    }
+
+    ssl_certificate /etc/letsencrypt/live/gogs.mydomain.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/gogs.mydomain.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
 ```
 
 ---
